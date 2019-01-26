@@ -738,7 +738,7 @@ function! s:buffer_alter_paths() dict abort
     endif
     let old = type(self.getvar('bundler_paths')) == type([]) ? self.getvar('bundler_paths') : []
     for [option, suffix] in
-          \ [['tags', get(self.project(), '_tags', 'tags')], ['path', 'lib']]
+          \ [['tags', get(self.project(), '_tags', 'tags')], ['path', 'lib'], ['path', 'system']]
       let value = self.getvar('&'.option)
       if !empty(old)
         let drop = s:build_path_option(old,suffix)
